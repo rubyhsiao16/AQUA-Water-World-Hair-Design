@@ -12,9 +12,6 @@
   
   <!-- Icons (FontAwesome for rich accessibility icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Leaflet Map CSS for interactive mapping -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
 
@@ -57,18 +54,17 @@
   <!-- HEADER -->
   <header class="header" id="header">
     <div class="container header-container">
-      <a href="#home" class="logo" aria-label="AQUA 水世界首頁">
+      <a href="index.html" class="logo" aria-label="AQUA 水世界首頁">
         <div class="logo-wave"></div>
         <span>AQUA 水世界</span>
       </a>
       
       <nav class="nav-links" id="navLinks" aria-label="主導覽列">
-        <a href="#home" onclick="closeMobileMenu()" class="active">首頁</a>
-        <a href="#about" onclick="closeMobileMenu()">關於我們</a>
-        <a href="#pricing" onclick="closeMobileMenu()">服務價目</a>
-        <a href="#services" onclick="closeMobileMenu()">成果展示</a>
+        <a href="index.html" onclick="closeMobileMenu()" class="active">首頁</a>
+        <a href="pricing.html" onclick="closeMobileMenu()">服務價目</a>
+        <a href="portfolio.html" onclick="closeMobileMenu()">成果展示</a>
         <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">線上預約</a>
-        <a href="#contact" onclick="closeMobileMenu()">聯絡資訊</a>
+        <a href="contact.html" onclick="closeMobileMenu()">聯絡資訊</a>
         <!-- Booking Link inside nav for mobile view -->
         <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" class="btn btn-primary" style="display: none; width: 100%; text-align: center; color: white;">立即預約</a>
       </nav>
@@ -107,7 +103,7 @@
           </p>
           <div class="hero-buttons">
             <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">線上快速預約</a>
-            <a href="#services" class="btn btn-secondary">瀏覽作品集</a>
+            <a href="portfolio.html" class="btn btn-secondary">瀏覽作品集</a>
           </div>
         </div>
         
@@ -139,7 +135,7 @@
           </p>
         </div>
 
-        <!-- 3 Brand Core Values (Mindmap concept) -->
+        <!-- 3 Brand Core Values -->
         <div class="about-features">
           <div class="feature-card glassmorphism">
             <div class="feature-icon-wrapper">
@@ -166,8 +162,7 @@
           </div>
         </div>
 
-        <!-- Designers section (Sitemap concept) -->
-        <!-- Designers section (Sitemap concept) -->
+        <!-- Designers section -->
         <div class="designers-container">
           <div class="text-center" style="margin-bottom: 50px;">
             <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--secondary);">專業美髮設計師</h3>
@@ -201,320 +196,13 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section class="section-padding" id="pricing" aria-label="服務價目表" style="background-color: var(--bg-light);">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-title">專業服務價目表</h2>
-          <p class="section-subtitle">
-            價格透明，絕無強迫推銷。本沙龍全面採一對一預約制，提供您最高品質的美髮設計與放鬆體驗。
-          </p>
+        <!-- CTA Row -->
+        <div class="text-center" style="margin-top: 70px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="pricing.html" class="btn btn-secondary"><i class="fa-solid fa-list"></i> 查看服務價目</a>
+          <a href="portfolio.html" class="btn btn-secondary"><i class="fa-solid fa-images"></i> 瀏覽成果展示</a>
+          <a href="contact.html" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> 立即預約諮詢</a>
         </div>
 
-        <div class="pricing-container">
-          <div class="pricing-grid">
-            <!-- category 1: 基礎洗剪 -->
-            <div class="pricing-card glassmorphism">
-              <div class="pricing-category-title">
-                <i class="fa-solid fa-scissors"></i> 基礎洗剪服務
-              </div>
-              <ul class="pricing-list">
-                <li>
-                  <span class="price-name">洗髮</span>
-                  <span class="price-value">$350</span>
-                </li>
-                <li>
-                  <span class="price-name">剪髮</span>
-                  <span class="price-value">$490</span>
-                </li>
-                <li>
-                  <span class="price-name">洗髮 + 剪髮</span>
-                  <span class="price-value">$600</span>
-                </li>
-                <li>
-                  <span class="price-name">學生洗剪</span>
-                  <span class="price-value">$450</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- category 2: 染燙護理 -->
-            <div class="pricing-card glassmorphism">
-              <div class="pricing-category-title">
-                <i class="fa-solid fa-wand-magic-sparkles"></i> 染燙護理服務
-              </div>
-              <ul class="pricing-list">
-                <li>
-                  <span class="price-name">染髮 / 冷燙</span>
-                  <span class="price-value">$2000 <span class="price-up">up</span></span>
-                </li>
-                <li>
-                  <span class="price-name">染髮 / 冷燙 (自備染料)</span>
-                  <span class="price-value">$800</span>
-                </li>
-                <li>
-                  <span class="price-name">縮毛矯正 (熱燙)</span>
-                  <span class="price-value">$2500 <span class="price-up">up</span></span>
-                </li>
-                <li>
-                  <span class="price-name">護髮</span>
-                  <span class="price-value">$700 - 1500</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES PORTFOLIO SECTION -->
-    <section class="section-padding" style="background-color: var(--bg-white);" id="services" aria-label="服務項目與作品集">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-title">顧客美髮成果展示</h2>
-          <p class="section-subtitle">
-            點擊下方分類，瀏覽 AQUA 水世界設計師的真實實體店內剪、燙、染客照成果。
-          </p>
-        </div>
-
-        <!-- Portfolio Filter Navigation -->
-        <div class="portfolio-filters" role="tablist" aria-label="作品分類">
-          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="portfolio-grid" data-filter="all">全部作品</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="cut">男士剪髮</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="root-vol">髮根蓬鬆燙</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="curl">空氣感捲髮</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="straight">離子燙直髮</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="thermal">溫塑燙</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="color">精緻線條挑染</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="consult">形象諮詢</button>
-        </div>
-
-        <!-- Portfolio Grid with real directory assets -->
-        <div class="portfolio-grid" id="portfolio-grid">
-          
-          <!-- 男士剪髮 (Cut) -->
-          <div class="portfolio-item" data-category="cut">
-            <img src="mens-haircut/1..1.jpg" alt="俐落日式漸層短髮">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">男士剪髮</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="cut">
-            <img src="mens-haircut/1..2.jpg" alt="極致商務清爽短髮">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">男士剪髮</span>
-            </div>
-          </div>
-
-          <!-- 髮根蓬鬆燙 (Root Volumizing) -->
-          <div class="portfolio-item" data-category="root-vol">
-            <img src="root-perm/1--1.jpg" alt="細軟髮必備髮根蓬鬆燙">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">髮根蓬鬆燙</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="root-vol">
-            <img src="root-perm/2--1.jpg" alt="型男無痕髮根燙">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">髮根蓬鬆燙</span>
-            </div>
-          </div>
-
-          <!-- 捲髮 (Curl) -->
-          <div class="portfolio-item" data-category="curl">
-            <img src="curly-hair/1-1.jpg" alt="女神款浪漫大捲">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">空氣感捲髮</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="curl">
-            <img src="curly-hair/2-1.jpg" alt="氣質中長髮木馬燙">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">空氣感捲髮</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="curl">
-            <img src="curly-hair/5-1.jpg" alt="蓬鬆法式捲髮">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">空氣感捲髮</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="curl">
-            <img src="curly-hair/8-1.jpg" alt="俏皮羊毛捲髮">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">空氣感捲髮</span>
-            </div>
-          </div>
-
-          <!-- 離子燙直髮 (Straight) -->
-          <div class="portfolio-item" data-category="straight">
-            <img src="straight-hair/1...1.jpg" alt="自然感亮澤離子燙">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">離子燙直髮</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="straight">
-            <img src="straight-hair/3...1.jpg" alt="縮毛矯正亮直髮">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">離子燙直髮</span>
-            </div>
-          </div>
-
-          <!-- 溫塑燙 (Thermal) -->
-          <div class="portfolio-item" data-category="thermal">
-            <img src="thermal-perm/1.jpg" alt="柔順浪漫溫塑燙造型 1">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">溫塑燙</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="thermal">
-            <img src="thermal-perm/2.png" alt="日系層次溫塑燙造型 2">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">溫塑燙</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="thermal">
-            <img src="thermal-perm/3.png" alt="空氣感蓬鬆溫塑燙造型 3">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">溫塑燙</span>
-            </div>
-          </div>
-
-          <!-- 挑染 (Color) -->
-          <div class="portfolio-item" data-category="color">
-            <img src="highlights/1....2.jpg" alt="個性灰藍色耳圈染">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">精緻線條挑染</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="color">
-            <img src="highlights/2....1.jpg" alt="暖金歐美線條染">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">精緻線條挑染</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="color">
-            <img src="highlights/3....2.jpg" alt="焦糖拿鐵歐美染">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">精緻線條挑染</span>
-            </div>
-          </div>
-          <div class="portfolio-item" data-category="color">
-            <img src="highlights/3....4.jpg" alt="霧粉線條耳圈染">
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">精緻線條挑染</span>
-            </div>
-          </div>
-
-          <!-- 形象諮詢 (Consulting) -->
-          <div class="portfolio-item" data-category="consult">
-            <div style="background: linear-gradient(135deg, #0f172a, #1e293b); width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:30px; text-align:center; color:white;">
-              <i class="fa-solid fa-comments-question" style="font-size:3rem; color:var(--primary); margin-bottom:20px;"></i>
-              <h4 style="color:white; margin-bottom:12px; font-family:var(--font-display);">一對一專業形象諮詢</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
-                根據您的臉型、髮流、日常整理習慣，以及工作的穿搭需求，提供客製化修飾提案。預約服務均免費贈送。
-              </p>
-            </div>
-            <div class="portfolio-overlay">
-              <span class="portfolio-tag">形象諮詢</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- BOOKING SECTION (Reservation Instruction) -->
-    <section class="section-padding" style="background-color: var(--bg-white);" id="booking" aria-label="預約美髮服務">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-title">全面採預約制</h2>
-          <p class="section-subtitle">
-            AQUA 水世界為維持一對一服務的高品質，並提供您最放鬆的情緒價值，全店全面實施<strong>預約制</strong>。
-          </p>
-        </div>
-
-        <div class="booking-card glassmorphism text-center" style="max-width: 600px; margin: 0 auto; padding: 40px 30px;">
-          <div style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;">
-            <i class="fa-solid fa-calendar-check"></i>
-          </div>
-          <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--secondary); margin-bottom: 16px;">
-            線上快速預約諮詢
-          </h3>
-          <p style="color: var(--text-light); font-size: 1rem; line-height: 1.8; margin-bottom: 30px;">
-            請點擊下方按鈕前往我們的官方 Facebook 粉絲專頁，直接發送私訊給我們。我們的設計師 Coco 與 Teamo 會親自與您確認預約時間，並提供一對一造型前形象諮詢。
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
-            <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 14px 40px; font-size: 1.1rem; width: 100%; max-width: 320px; color: white;">
-              <i class="fa-brands fa-facebook-messenger" style="font-size: 1.2rem;"></i> 前往粉絲專頁預約
-            </a>
-            <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
-              * 建議提前 3-5 天預約，以確保能為您保留理想的時段。
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT & INTERACTIVE MAP SECTION -->
-    <section class="section-padding" id="contact" aria-label="聯絡資訊與地圖">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-title">聯絡我們 & 營業地點</h2>
-          <p class="section-subtitle">
-            AQUA 水世界位於竹科週邊，提供充足的專屬汽機車位，期待您的光臨。
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info-card glassmorphism">
-            <div class="contact-details">
-              
-              <!-- Address -->
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                  <h4>營業地址</h4>
-                  <p>300 新竹市東區武功里建中路 57 號</p>
-                </div>
-              </div>
-
-              <!-- Phone -->
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-                <div>
-                  <h4>預約專線</h4>
-                  <p><a href="tel:035740596" style="color: inherit;">03-5740596</a></p>
-                  <p style="font-size:0.85rem; color: var(--text-light);">歡迎於營業時間來電諮詢</p>
-                </div>
-              </div>
-
-              <!-- Hours -->
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
-                <div>
-                  <h4>營業時間</h4>
-                  <p>週一至週日 10:00 - 21:00</p>
-                </div>
-              </div>
-
-            </div>
-            
-            <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 24px; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center;">
-              <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; max-width: 220px; font-size: 0.95rem; color: white;">
-                <i class="fa-brands fa-facebook-f" style="font-size: 1.1rem;"></i> 官方粉絲專頁
-              </a>
-            </div>
-          </div>
-
-          <!-- Leaflet Interactive Map -->
-          <div class="map-wrapper">
-            <div id="mapCanvas" class="map-canvas" aria-label="AQUA 水世界地圖定位"></div>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -532,12 +220,11 @@
       <div class="footer-links">
         <h3>網頁選單</h3>
         <ul>
-          <li><a href="#home">首頁</a></li>
-          <li><a href="#about">理念與團隊</a></li>
-          <li><a href="#pricing">服務價目</a></li>
-          <li><a href="#services">成果展示</a></li>
-          <li><a href="#booking">預約說明</a></li>
-          <li><a href="#contact">營業資訊</a></li>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">服務價目</a></li>
+          <li><a href="portfolio.html">成果展示</a></li>
+          <li><a href="contact.html">預約說明</a></li>
+          <li><a href="contact.html#contact">營業資訊</a></li>
         </ul>
       </div>
 
@@ -559,9 +246,6 @@
     </div>
   </footer>
 
-  <!-- Leaflet Map JS Library (loads Leaflet map tiles interactively) -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  
   <!-- Custom JS Application Logic -->
   <script src="app.js"></script>
 </body>
