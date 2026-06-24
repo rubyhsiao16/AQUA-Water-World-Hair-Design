@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務價目 | AQUA 水世界 Hair Salon</title>
+  <meta name="description" content="AQUA 水世界髮藝沙龍完整服務價目表，包含洗剪、染燙護理等項目，價格透明公開，絕無強迫推銷。">
+  <meta name="keywords" content="AQUA水世界, 美髮價目, 剪髮價格, 燙髮價格, 染髮價格, 新竹美髮">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Icons (FontAwesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY BACKDROP -->
+  <div class="access-backdrop" id="accessBackdrop" onclick="toggleAccessPanel(false)"></div>
+
+  <!-- ACCESSIBILITY PANEL -->
+  <aside class="access-panel" id="accessPanel" aria-label="無障礙輔助設定">
+    <div class="access-header">
+      <h3><i class="fa-solid fa-universal-access"></i> 無障礙輔助設定</h3>
+      <button class="access-close-btn" onclick="toggleAccessPanel(false)" aria-label="關閉無障礙設定"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="access-option">
+      <label id="fontSizeLabel">網頁字體大小</label>
+      <div class="font-size-controls" role="group" aria-labelledby="fontSizeLabel">
+        <button class="font-btn active" id="font-normal" onclick="setFontScale(1, 'font-normal')">標準</button>
+        <button class="font-btn" id="font-large" onclick="setFontScale(1.2, 'font-large')">中</button>
+        <button class="font-btn" id="font-xlarge" onclick="setFontScale(1.4, 'font-xlarge')">大</button>
+      </div>
+    </div>
+    <div class="access-option">
+      <div class="contrast-toggle-wrapper">
+        <label for="contrastToggle" style="margin-bottom: 0;">高對比度閱讀模式</label>
+        <label class="switch">
+          <input type="checkbox" id="contrastToggle" onchange="toggleHighContrast(this.checked)">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="access-option" style="border-top: 1px solid var(--border-color); padding-top: 20px;">
+      <p style="font-size: 0.85rem; color: var(--text-light);">
+        * AQUA 致力於提供優質體驗，本網站支援網頁字體縮放、高對比度閱讀與鍵盤友善操作。
+      </p>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" aria-label="AQUA 水世界首頁">
+        <div class="logo-wave"></div>
+        <span>AQUA 水世界</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="主導覽列">
+        <a href="index.html" onclick="closeMobileMenu()">首頁</a>
+        <a href="pricing.html" onclick="closeMobileMenu()" class="active">服務價目</a>
+        <a href="portfolio.html" onclick="closeMobileMenu()">成果展示</a>
+        <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">線上預約</a>
+        <a href="contact.html" onclick="closeMobileMenu()">聯絡資訊</a>
+        <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" class="btn btn-primary" style="display: none; width: 100%; text-align: center; color: white;">立即預約</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="access-toggle-btn" onclick="toggleAccessPanel(true)" aria-label="開啟無障礙設定" title="無障礙設定">
+          <i class="fa-solid fa-universal-access" style="font-size: 1.25rem;"></i>
+        </button>
+        <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即預約</a>
+        <button class="menu-toggle" id="menuToggle" onclick="toggleMobileMenu()" aria-label="切換選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="服務價目頁面標題">
+      <div class="container text-center">
+        <div class="badge" style="margin-bottom: 20px; display: inline-flex;">
+          <i class="fa-solid fa-list"></i> 服務價目
+        </div>
+        <h1 class="page-hero-title">專業服務<span>價目表</span></h1>
+        <p class="page-hero-subtitle">
+          價格透明，絕無強迫推銷。本沙龍全面採一對一預約制，提供您最高品質的美髮設計與放鬆體驗。
+        </p>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section-padding" id="pricing" aria-label="服務價目表" style="background-color: var(--bg-light);">
+      <div class="container">
+
+        <div class="pricing-container">
+          <div class="pricing-grid">
+            <!-- category 1: 基礎洗剪 -->
+            <div class="pricing-card glassmorphism">
+              <div class="pricing-category-title">
+                <i class="fa-solid fa-scissors"></i> 基礎洗剪服務
+              </div>
+              <ul class="pricing-list">
+                <li>
+                  <span class="price-name">洗髮</span>
+                  <span class="price-value">$350</span>
+                </li>
+                <li>
+                  <span class="price-name">剪髮</span>
+                  <span class="price-value">$490</span>
+                </li>
+                <li>
+                  <span class="price-name">洗髮 + 剪髮</span>
+                  <span class="price-value">$600</span>
+                </li>
+                <li>
+                  <span class="price-name">學生洗剪</span>
+                  <span class="price-value">$450</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- category 2: 染燙護理 -->
+            <div class="pricing-card glassmorphism">
+              <div class="pricing-category-title">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> 染燙護理服務
+              </div>
+              <ul class="pricing-list">
+                <li>
+                  <span class="price-name">染髮 / 冷燙</span>
+                  <span class="price-value">$2000 <span class="price-up">up</span></span>
+                </li>
+                <li>
+                  <span class="price-name">染髮 / 冷燙 (自備染料)</span>
+                  <span class="price-value">$800</span>
+                </li>
+                <li>
+                  <span class="price-name">縮毛矯正 (熱燙)</span>
+                  <span class="price-value">$2500 <span class="price-up">up</span></span>
+                </li>
+                <li>
+                  <span class="price-name">護髮</span>
+                  <span class="price-value">$700 - 1500</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Note Card -->
+          <div class="pricing-note glassmorphism" style="margin-top: 40px; padding: 28px 32px; display: flex; align-items: flex-start; gap: 18px;">
+            <i class="fa-solid fa-circle-info" style="font-size: 1.5rem; color: var(--primary); margin-top: 2px; flex-shrink: 0;"></i>
+            <div>
+              <p style="font-weight: 700; color: var(--secondary); font-family: var(--font-display); margin-bottom: 6px;">價格備注</p>
+              <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.8;">
+                以上價格依髮長、髮量及設計複雜度可能有所調整，設計師將於預約確認時提供精確報價。如有疑問，歡迎直接聯絡我們的設計師 Coco 或 Teamo 進行諮詢。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center" style="margin-top: 60px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-facebook-messenger"></i> 前往粉絲專頁預約
+          </a>
+          <a href="portfolio.html" class="btn btn-secondary">
+            <i class="fa-solid fa-images"></i> 瀏覽成果展示
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>AQUA 水世界</h2>
+        <p>
+          結合專業美髮造型與最安心放鬆的洗髮體驗，打造竹科園區與新竹家庭首選的友善預約制美髮沙龍。
+        </p>
+      </div>
+      <div class="footer-links">
+        <h3>網頁選單</h3>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">服務價目</a></li>
+          <li><a href="portfolio.html">成果展示</a></li>
+          <li><a href="contact.html">預約說明</a></li>
+          <li><a href="contact.html#contact">營業資訊</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>聯絡資訊</h3>
+        <p><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> contact@aquahair.com.tw</p>
+        <p><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> 03-5740596</p>
+        <p><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> 300 新竹市東區武功里建中路 57 號</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AQUA 水世界髮藝沙龍. 版權所有. 網頁支援無障礙數位設計.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="AQUA Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="AQUA Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/19ZFCupeSS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="AQUA YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JS Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
